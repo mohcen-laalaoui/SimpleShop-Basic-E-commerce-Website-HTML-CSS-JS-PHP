@@ -1,4 +1,5 @@
 function Validation_infos() {
+  // Get values from input fields
   var firstName = document.getElementById("nom").value;
   var lastName = document.getElementById("prenom").value;
   var age = document.getElementById("age").value;
@@ -9,11 +10,13 @@ function Validation_infos() {
   var gender = document.querySelector('input[name="Sexe"]:checked').value;
   var region = document.getElementById("wilaya").value;
 
+  // Check if required fields are empty
   if (firstName === "" || lastName === "" || email === "") {
     alert("Please fill in all required fields (First Name, Last Name, Email).");
     return false;
   }
 
+  // Check if age is within a valid range
   if (age === "") {
     alert("Your age is empty");
     return false;
@@ -22,6 +25,7 @@ function Validation_infos() {
     return false;
   }
 
+  // Check if the phone number is valid
   if (
     (isNaN(phone) && phone.length !== 9) ||
     (phone.length !== 9 && phone.length !== 10)
@@ -32,6 +36,7 @@ function Validation_infos() {
     return false;
   }
 
+  // Check if passwords match and meet length requirements
   if (password === "" || confirmPassword === "") {
     alert("Please fill in both password and confirm password fields.");
     return false;
@@ -43,10 +48,13 @@ function Validation_infos() {
     return false;
   }
 
+  // Get password input element and show password checkbox
   const passwordInput = document.getElementById("password");
   const showPasswordCheckbox = document.getElementById("show-password");
 
+  // Add an event listener to the showPasswordCheckbox
   showPasswordCheckbox.addEventListener("change", () => {
+    // Toggle password visibility based on checkbox state
     if (showPasswordCheckbox.checked) {
       passwordInput.type = "text";
     } else {
@@ -54,7 +62,9 @@ function Validation_infos() {
     }
   });
 
+  // Display region and gender information
   alert("Region: " + region + "\nGender: " + gender);
 
+  // Validation successful
   return true;
 }
