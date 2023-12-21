@@ -1,0 +1,80 @@
+/* Center the content */
+* {
+  margin: auto;
+  padding: auto;
+}
+body {
+  background: linear-gradient(180deg, #cfd9df 0%, #e2ebf0 100%);
+}
+/* Style the table */
+table {
+  margin-top: 18px;
+  border-radius: 10px 30px;
+  box-shadow: 2px 2px 10px black;
+  font-family: sans-serif;
+  background:white;
+}
+
+/* Style the table cells */
+td {
+  padding: 10px;
+}
+
+/* Style the table headings */
+th {
+  font-weight: bold;
+  text-align: left;
+}
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  animation: titre 2s ease-in-out infinite;
+}
+
+@keyframes titre {
+  0% {
+    transform: scale(1);
+    color: #ff2d55;
+  }
+  50% {
+    transform: scale(1.1);
+    color: #5856d6;
+  }
+  100% {
+    transform: scale(1);
+    color: #ff2d55;
+  }
+}
+h1:focus {
+  outline: none;
+}
+.f {
+  margin-top: 5%;
+}
+/* Style the input and select fields */
+input[type="text"],
+select {
+  width: 90%;
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 9px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: sans-serif;
+}
+/* Style the submit button */
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: #fff;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+/* Style the checkboxes */
+input[type="checkbox"] {
+  margin-right: 5px;
+}

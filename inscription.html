@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="Images/slogo.png">
+    <link rel="stylesheet" href="inscription.css" />
+    <script src="insecription.js"></script>
+    <title>Inscription</title>
+</head>
+
+<body>
+    <div id="header">
+        <h1 class="animate_heading">Créer un compte</h1>
+        <div class="login">
+            <form action="inscription.php" method="POST" onsubmit="return Validation_infos()">
+                <table border="0" width="50%" height="50%">
+                    <tr>
+                        <td></td>
+                        <td><input class="cform" type="text" id="nom" name="Nom" value="" placeholder="Nom"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input class="cform" type="text" id="prenom" name="Prénom" value="" placeholder="Prénom">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input class="cform" type="number" id="age" name="Age" placeholder="Age" value=""></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="se">
+                            <select name="wilaya" id="wilaya">
+                                <option selected disabled>Ville</option>
+                                <option value="Sétif" id="wilaya">Sétif</option>
+                                <option value="constantine" id="wilaya">constantine</option>
+                                <option value="Batna" id="wilaya">Batna</option>
+                                <option value="Alger" id="wilaya">Alger</option>
+                                <option value="Oran" id="wilaya">Oran</option>
+                                <option value="Annaba" id="wilaya">Annaba</option>
+                                <option value="Mila" id="wilaya">Mila</option>
+                            </select>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input class="cform" type="tel" id="tele" name="Téléphone" placeholder="Téléphone" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input class="cform" type="email" id="email" name="Email" value="" placeholder="E-mail">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <textarea name="Adress" class="cform" id="txt" cols="22" rows="3"
+                                placeholder="Adress"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input class="cform" id="password" type="password" name="Password" value=""
+                                placeholder="Mot de passe"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input class="cform" id="confirm_passwor" type="password" name="Confirm_password" value=""
+                                placeholder="Confirmer le mot de passe"></td>
+                    </tr>
+                    <tr>
+                        <td class="sex">Sexe: </td>
+                        <td>
+                            <label>Homme</label>
+                            <input type="radio" id="sexe" name="Sexe" value="Homme" checked>
+                            <label>Femme</label>
+                            <input type="radio" id="sexe" name="Sexe" value="Femme">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td id="showPassword">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <div class="button">
+                                <input class="button-s" type="reset" name="Reset" value="Reset">
+                                <input onclick="return Validation_infos()" class="button-s" type="submit" name="Sign up"
+                                    value="Sign up">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="commande.css">
+    <script src="commande.js"></script>
+    <title>Commande produit</title>
+</head>
+
+<body>
+    <h1>Commander le produit</h1>
+    <form action="commande.php" name="form" method="post">
+        <table border="0" width="50%" height="50%">
+            <tr>
+                <td rowspan="7"><img src="Images/nike.png.png" height="300px" width="300px"></td>
+            </tr>
+            <tr>
+                <td>Vendeur: </td>
+                <td><input name="Vendeur" type="text" value="Mohcen" disabled></td>
+            </tr>
+            <tr>
+                <td>Prix: </td>
+                <td><input name="Prix" type="text" value="€65.00" disabled></td>
+            </tr>
+            <tr>
+                <td>Réference: </td>
+                <td><input name="Réference" type="text" value="Ch001" disabled></td>
+            </tr>
+            <tr>
+                <td>Couleur: </td>
+                <td><input type="checkbox" name="Color: " value="Noir">
+                    Noir
+                    <br>
+                    <input type="checkbox" name="Color: " value="Maron">
+                    Maron
+                    <br>
+                    <input type="checkbox" name="Color: " value="Blue">
+                    Blue
+                    <br>
+                    <input type="checkbox" name="Color: " value="Gris">
+                    Gris
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>Quantité: </td>
+                <td><select>
+                        <option name="Quantité" selected disabled>Quantité</option>
+                        <option name="Quantité" value="1">1</option>
+                        <option name="Quantité" value="2">2</option>
+                        <option name="Quantité" value="3">3</option>
+                        <option name="Quantité" value="4">4</option>
+                        <option name="Quantité" value="5">5</option>
+                        <option name="Quantité" value="6">6</option>
+                        <option name="Quantité" value="7">7</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3"><input type="submit" onclick="Validation_commande()" name="submit" value="Commander">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
