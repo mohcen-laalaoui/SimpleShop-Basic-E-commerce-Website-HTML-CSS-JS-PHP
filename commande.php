@@ -1,20 +1,31 @@
 <?php
+// Start a session to manage user authentication
 session_start();
-if(isset($_SESSION['id'], $_SESSION['Prénom'], $_SESSION['Nom'])){
-    $conn = mysqli_connect('localhost', 'id20775124_root', 'Mohcen_18112003', 'id20775124_base_client');
-    $vend = $_POST['Vendeur'];
-    $prix = $_POST['Prix'];
-    $reference = $_POST['Réference'];
-    $quantite = $_POST['Quantité'];
-    $coul = "";
-    foreach ($_POST['Couleur'] as $val){
-        $coul = $coul . ' ' . $val;
+
+// Check if user is authenticated (session variables exist)
+if(isset($_SESSION['id'], $_SESSION['First_Name'], $_SESSION['Last_Name'])){
+    // Establish a connection to the database
+    $connection = mysqli_connect('localhost', 'id20775124_root', 'Mohcen_18112003', 'id20775124_base_client');
+
+    // Retrieve data from the form
+    $seller = $_POST['Seller'];
+    $price = $_POST['Price'];
+    $reference = $_POST['Reference'];
+    $quantity = $_POST['Quantity'];
+    $color = "";
+
+    // Loop through the selected colors
+    foreach ($_POST['Color'] as $val){
+        $color = $color . ' ' . $val;
     }
-    $ajout = mysqli_query($conn, "INSERT INTO Commande_produit(Id_Clt, Vedeur_prod, Prix_prod, Ref_prod, Qant_prod, Colr_prod) 
-    VALUES($id, $vend, $prix, $reference, $quantite, $coul)");
+
+    // Insert data into the database
+    $addition = mysqli_query($connection, "INSERT INTO Order_Product(Client_Id, Seller, Price, Reference, Quantity, Color) 
+    VALUES($id, $seller, $price, $reference, $quantity, $color)");
 }
 else{
-    echo("<p style='color:green;'>AUTHENTIFICATION REUSSIE!</p><br>");
-    echo("<a href='logIn.html'>Confirmer votre authentification</a>");
+    // Display a message if authentication is not successful
+    echo("<p style='color:green;'>AUTHENTICATION SUCCESSFUL!</p><br>");
+    echo("<a href='logIn.html'>Confirm your authentication</a>");
 }
 ?>
